@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="rent_system_action" model="ir.actions.act_window">
+        <field name="name">Properties</field>
+        <field name="res_model">rent.system</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="rent_system_action1" model="ir.actions.act_window">
+        <field name="name">Items</field>
+        <field name="res_model">rent.system</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="rent_menu_root" name="Rent System">
+        <menuitem id="rent_first_level_menu" name="Settings">
+            <menuitem id="rent_model_menu_action" sequence="2" action="rent_system_action"/>
+            <menuitem id="rent_model_menu_action1" sequence="1" action="rent_system_action1"/>
+        </menuitem>
+    </menuitem>
+</odoo>
