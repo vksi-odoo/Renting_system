@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model ="rent.lender" id = "rent_model"> 
+            <field name="name">Rent System</field>
+            <field name="room_type">1rk</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        ------------------------TREE VIEW---------------------------------
+        <record id="rent_system_tree_view" model="ir.ui.view">
+            <field name="name">Rent system tree view</field>
+            <field name="model">rent.system</field>
+            <field name="arch" type="xml">
+                <tree string="rent_system">
+                    <field name="name"/>
+                    <field name="contact_no"/>
+                </tree>
+            </field>
+        </record>
+
+        ------------------------FORM VIEW---------------------------------
+        <record id = "rent_system_form_view" model= "ir.ui.view">
+            <field name="name">Rent form view</field>
+            <field name="model">rent.system</field>
+            <field name="arch" type = "xml">
+                <form string = "rent_system_view">
+                    <header>
+                        <field name="state" widget="statusbar" options="{'clickable':'1'}"/>
+                    </header>
+                    <sheet>
+                        <label for ="name"></label>
+                        <h1><field name="name"/></h1>
+                        <group>
+                            <group style = "Margin-top:30px">
+                                <field name="contact_no"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Description">
+                                <field name="description"/>
+                                <group>
+                                    <group style="Margin-top:30px">
+                                        <field name="address"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

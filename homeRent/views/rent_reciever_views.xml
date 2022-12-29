@@ -1,66 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <odoo>
     <data>
-
-        ---------------------TREE VIEW----------------------------
-        <record id="rent_system_tree_view" model = "ir.ui.view">
-            <field name="name">Renting System Tree View</field>
-            <field name="model">rent.system</field>
+        ------------------------TREE VIEW---------------------------------
+        <record id = "rent_reciever_tree_view" model="ir.ui.view">
+            <field name ="name">Rent reciever tree view</field>
+            <field name="model">rent.reciever</field>
             <field name="arch" type="xml">
-                <tree expand="1" string="rent_tree_view">
+                <tree expand="1" string="rent_reciever">
                     <field name="name"/>
-                    <field name="renting_price"/>
-                    <field name="sharing"/>
                     <field name="room_type"/>
-                    <field name="purpose"/>
+                    <field name="sharing"/>
                 </tree>
             </field>
         </record>
-
-        ---------------------SEARCH VIEW----------------------------
-        <record id ="rent_system_search_view" model="ir.ui.view">
-            <field name="name">Renting System search view</field>
-            <field name="model">rent.system</field>
+        ------------------------SEARCH VIEW---------------------------------
+        <record id = "rent_reciever_search_view" model="ir.ui.view">
+            <field name="name">Rent reciever search view</field>
+            <field name="model">rent.reciever</field>
             <field name="arch" type="xml">
-                <search string="rent_system_search">
-                    <field name="name" string="renting_system"/>
+                <search string="rent_recieve_search">
+                    <field name="name" string="rent_reciver"/>
                     <field name="renting_price"/>
                     <field name="sharing"/>
                     <field name="room_type"/>
-                    <field name="purpose"/>
                     <separator/>
                     <filter string="sharing" name="sharing_room"/>
                     <separator/>
                     <filter string="room_type" name="RoomType"/>
                     <separator/>
-                    <filter string="purpose" name="Purpose"/>
+                    <filter string="sharing" name="Sharing"/>
                     <group expand="1" string="Group by">
                         <filter string="sharing" name="sharing_room" context="{'group_by':'room_type','bachelors':'True'}"/>
                     </group>
                 </search>
             </field>
         </record>
+        ------------------------FORM VIEW---------------------------------
 
-        ---------------------FORM VIEW----------------------------
-        <record id="rent_system_form_view" model="ir.ui.view">
-            <field name="name">Renting System Form View</field>
-            <field name="model">rent.system</field>
+        <record id="rent_recieve_form_view" model="ir.ui.view">
+            <field name="name">Rent reciever form view</field>
+            <field name="model">rent.reciever</field>
             <field name="arch" type="xml">
-                <form string="rent_system">
+                <form string="rent_reciever">
                     <header>
-                        <field name="state" widget="statusbar" options="{'clickable':'1'}"/>
+                        <field name="state" widget="statusbar" options="{'clickable':'1'}"></field>
                     </header>
                     <sheet>
-                        <label for="name"></label>
+                        <label for ="name"></label>
                         <h1><field name="name"/></h1>
                         <group>
-                            <group style="Margin-top:30px">
+                            <group style="Margin-top:30px">     
                                 <field name="from_date"/>
-                                <field name="to_date"/>
                             </group>
                             <group style="Margin-top:30px">
                                 <field name="renting_price"/>
+                            </group>
+                            <group style="Margin-top:30px">
+                                <field name="contact_no"/>
                             </group>
                             <group style="Margin-top:30px">
                                 <field name="sharing"/>
@@ -70,20 +66,20 @@
                             </group>
                         </group>
                         <notebook>
-                            <page string="Description">
+                            <page string = "description">
                                 <field name="description"/>
                                 <group>
                                     <group style="Margin-top:30px">
-                                        <field name="room_type"/>
-                                    </group>
-                                    <group style="Margin-top:30px">
-                                        <field name="purpose"/>
+                                        <field name="bachelors"/>
                                     </group>
                                     <group style="Margin-top:30px">
                                         <field name="furnished"/>
                                     </group>
                                     <group style="Margin-top:30px">
-                                        <field name="bachelors"/>
+                                        <field name="deposit_money"/>
+                                    </group>
+                                    <group style="Margin-top:30px">
+                                        <field name="room_type"/>
                                     </group>
                                 </group>
                             </page>

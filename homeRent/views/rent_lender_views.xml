@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+        ---------------------TREE VIEW----------------------------
+        <record id="rent_lender_tree_view" model = "ir.ui.view">
+            <field name="name">Renting System Tree View</field>
+            <field name="model">rent.lender</field>
+            <field name="arch" type="xml">
+                <tree expand="1" string="rent_tree_view">
+                    <field name="name"/>
+                    <field name="furnished"/>
+                    <field name="renting_price" optional = "hide"/>
+                    <field name="sharing" optional="hide"/>
+                    <field name="room_type"/>
+                </tree>
+            </field>
+        </record>
+
+        ---------------------SEARCH VIEW----------------------------
+        <record id ="rent_lender_search_view" model="ir.ui.view">
+            <field name="name">Renting System search view</field>
+            <field name="model">rent.lender</field>
+            <field name="arch" type="xml">
+                <search string="rent_lender_search">
+                    <field name="name" string="rent_lender"/>
+                    <field name="renting_price"/>
+                    <field name="sharing"/>
+                    <field name="room_type"/>
+                    <separator/>
+                    <filter string="sharing" name="sharing_room"/>
+                    <separator/>
+                    <filter string="room_type" name="RoomType"/>
+                    <separator/>
+                    <filter string="sharing" name="Sharing"/>
+                    <group expand="1" string="Group by">
+                        <filter string="sharing" name="sharing_room" context="{'group_by':'room_type','bachelors':'True'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        ---------------------FORM VIEW----------------------------
+        <record id="rent_lender_form_view" model="ir.ui.view">
+            <field name="name">Renting System Form View</field>
+            <field name="model">rent.lender</field>
+            <field name="arch" type="xml">
+                <form string="rent_lender">
+                    <header>
+                        <field name="state" widget="statusbar" options="{'clickable':'1'}"/>
+                    </header>
+                    <sheet>
+                        <label for="name"></label>
+                        <h1><field name="name"/></h1>
+                        <group>
+                            <group style="Margin-top:30px">
+                                <field name="from_date"/>
+                                <field name="to_date"/>
+                            </group>
+                            <group style= "Margin-top:30px">
+                                <field name="contact_no"/>
+                            </group>
+                            <group style="Margin-top:30px">
+                                <field name="renting_price"/>
+                            </group>
+                            <group style="Margin-top:30px">
+                                <field name="sharing"/>
+                            </group>
+                            <group style="Margin-top:30px">
+                                <field name="location"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Description">
+                                <field name="description"/>
+                                <group>
+                                    <group style="Margin-top:30px">
+                                        <field name="room_type"/>
+                                    </group>
+                                    <group style="Margin-top:30px">
+                                        <field name="furnished"/>
+                                    </group>
+                                    <group style="Margin-top:30px">
+                                        <field name="bachelors"/>
+                                    </group>
+                                    <group style="Margin-top:30px">
+                                        <field name="deposit_money"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
