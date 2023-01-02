@@ -2,3 +2,5 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 homeRent.access_rent_system,access_rent_system,homeRent.model_rent_system,base.group_user,1,1,1,1
 homeRent.access_rent_lender,access_rent_lender,homeRent.model_rent_lender,base.group_user,1,1,1,1
 homeRent.access_rent_reciever,access_rent_reciever,homeRent.model_rent_reciever,base.group_user,1,1,1,1
+homeRent.access_rent_offer,access_rent_offer,homeRent.model_rent_offer,base.group_user,1,1,1,1
+homeRent.access_rent_tags,access_rent_tags,homeRent.model_rent_tags,base.group_user,1,1,1,1

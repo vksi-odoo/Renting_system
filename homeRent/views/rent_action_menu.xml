@@ -18,10 +18,17 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+    <record id="rent_system_action12" model="ir.actions.act_window">
+        <field name="name">Rent Tags</field>
+        <field name="res_model">rent.tags</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
 
     <menuitem id="rent_menu_root" name="Rent System">
         <menuitem id="rent_first_level_menu" name="Settings">
             <menuitem id="rent_model_action1" action="rent_system_action"/>
+            <menuitem id="rent_model_action2" action="rent_system_action12"/>
         </menuitem>
         <menuitem id="rent_second_level_menu" name="Task">
             <menuitem id="rent_model_menu_action" action="rent_system_action1"/>

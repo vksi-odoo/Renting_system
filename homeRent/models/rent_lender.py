@@ -23,7 +23,6 @@ class rentLender(models.Model):
     room_type = fields.Selection(
         string="Room Type",
         selection = [('1-rk','1-RK'),('1-bhk','1-BHK'),('2-bhk','2-BHK'),('3-bhk','3-BHK')],
-        required = True
     )
     # purpose = fields.Selection(
     #     string="Purpose",
@@ -34,6 +33,9 @@ class rentLender(models.Model):
         string="state",
         selection = [('new','New'),('confirm','Confirm'),('done','Done')]
     )
+    tags_ids = fields.Many2many("rent.tags",string="tags")
+    offer_ids = fields.One2many("rent.offer","rent_id",string="offer ids")
+    
 
     
     

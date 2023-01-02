@@ -51,7 +51,11 @@
                         <group>
                             <group style="Margin-top:30px">     
                                 <field name="from_date"/>
+                                <field name="to_date"/>
                             </group>
+                            <group style="Margin-top:30px">
+                                <field name="tags_ids" widget ="many2many_tags" />
+                            </group> 
                             <group style="Margin-top:30px">
                                 <field name="renting_price"/>
                             </group>
@@ -82,6 +86,15 @@
                                         <field name="room_type"/>
                                     </group>
                                 </group>
+                            </page>
+                            <page string="offer_ids">
+                                <field name ="offer_ids">
+                                    <tree>
+                                        <field name="price"/>
+                                        <field name="rent_id"/>
+                                        <field name="status"/>
+                                    </tree>
+                                </field>
                             </page>
                         </notebook>
                     </sheet>
