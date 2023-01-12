@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="rent_offer_view" model = "ir.ui.view">
+            <field name="name">Renting System Tree View</field>
+            <field name="model">rent.offer</field>
+            <field name="arch" type="xml">
+                <tree expand="1" string="rent_tree_view">
+                    <field name="price"/>
+                    <field name="status"/>
+                    <field name="partner_id"/>
+                    <field name="rent_type_id"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

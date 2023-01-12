@@ -12,5 +12,7 @@ class rentOffer(models.Model):
         selection = [('accepted','Accepted'),('refused','refused')]
     )
     partner_id = fields.Many2one("res.partner",string="Partner id")
-    rent_id = fields.Many2one("rent.reciever",string ="rent_id")
-    rent_id = fields.Many2one("rent.lender",string = "rent_id")
+    rents_id = fields.Many2one("rent.reciever",string ="Renting id")
+    rent_id = fields.Many2one("rent.lender",string = "Rent id")
+    rent_type_id = fields.Many2one("rent.type",related="rents_id.rent_type_id",store=True,string = "Rent Types")
+    

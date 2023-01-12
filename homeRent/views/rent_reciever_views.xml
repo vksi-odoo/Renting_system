@@ -9,7 +9,9 @@
                 <tree expand="1" string="rent_reciever">
                     <field name="name"/>
                     <field name="room_type"/>
+                    <field name="tags_ids" widget="many2many_tags"  options="{'color_field':'colors'}"/>
                     <field name="sharing"/>
+                    <field name="rent_type_id"/>
                 </tree>
             </field>
         </record>
@@ -43,6 +45,8 @@
             <field name="arch" type="xml">
                 <form string="rent_reciever">
                     <header>
+                        <button name="action_buy" type="object" string="Buy"/>
+                        <button name="action_cancel" type="object" string="Cancel"/>
                         <field name="state" widget="statusbar" options="{'clickable':'1'}"></field>
                     </header>
                     <sheet>
@@ -50,20 +54,28 @@
                         <h1><field name="name"/></h1>
                         <group>
                             <group style="Margin-top:30px">     
-                                <field name="from_date"/>
-                                <field name="to_date"/>
+                                <field name="date_availability"/>
                             </group>
                             <group style="Margin-top:30px">
-                                <field name="tags_ids" widget ="many2many_tags" />
+                                <field name="tags_ids" widget ="many2many_tags" options="{'color_field': 'colors' , 'no_create':True, 'no_edit': True}" />
                             </group> 
                             <group style="Margin-top:30px">
                                 <field name="renting_price"/>
                             </group>
                             <group style="Margin-top:30px">
-                                <field name="contact_no"/>
+                                <field name="contact_no" widget="char"/>
                             </group>
                             <group style="Margin-top:30px">
                                 <field name="sharing"/>
+                            </group>
+                            <group style="Margin-top:30px">
+                                <field name="salesperson_id" widget="many2one_avatar"/>
+                            </group>
+                            <group style="Margin-top:30px">
+                                <field name="buyers_id" widget="many2one_avatar"/>
+                            </group>
+                            <group style="Margin-top:30px">
+                                <field name="rent_type_id" options="{'no_create':True,'no_edit':True}"/>
                             </group>
                             <group style="Margin-top:30px">
                                 <field name="location"/>
@@ -77,27 +89,32 @@
                                         <field name="bachelors"/>
                                     </group>
                                     <group style="Margin-top:30px">
-                                        <field name="furnished"/>
-                                    </group>
-                                    <group style="Margin-top:30px">
-                                        <field name="deposit_money"/>
+                                        <field name="deposit_money" attrs = "{'invisible':[('bachelors','=',False)]}"/>
                                     </group>
                                     <group style="Margin-top:30px">
                                         <field name="room_type"/>
+                                    </group>
+                                    <group style="Margin-top:30px">
+                                        <field name="total_price"/>
                                     </group>
                                 </group>
                             </page>
                             <page string="offer_ids">
                                 <field name ="offer_ids">
-                                    <tree>
+                                    <tree editable="top">
                                         <field name="price"/>
-                                        <field name="rent_id"/>
+                                        <field name="partner_id"/>
                                         <field name="status"/>
                                     </tree>
                                 </field>
                             </page>
                         </notebook>
                     </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                        <field name="activity_ids"/>
+                    </div>
                 </form>
             </field>
         </record>

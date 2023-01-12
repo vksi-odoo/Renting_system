@@ -8,9 +8,11 @@
         'views/rent_lender_views.xml',
         'views/rent_system_views.xml',
         'views/rent_reciever_views.xml',
+        'views/rent_type_views.xml',
+        'views/rent_offer_views.xml'
         ],
-    'demo' : [
-      'demo/demo_data.xml'  
-    ],
+    # 'demo' : [
+    #   'demo/demo_data.xml'  
+    'depends': ['base','mail','portal'],
     'application' : True,
 }

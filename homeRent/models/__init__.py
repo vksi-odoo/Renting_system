@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import rent_system,rent_lender,rent_reciever,rent_offer,rent_tags
+from . import rent_system,rent_lender,rent_reciever,rent_offer,rent_tags,rent_type

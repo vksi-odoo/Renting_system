@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id = "rent_type_form_view" model="ir.ui.view">
+            <field name ="name">Rent reciever tree view</field>
+            <field name="model">rent.type</field>
+            <field name="arch" type="xml">
+                <form string="rent_type">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button
+                                class="oe_stat_button"
+                                name="%(homeRent.state_button)d"
+                                type="action"
+                                icon="fa-money">
+                                <field name="offer_count" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <label for="name"></label>
+                        <h1><field name="name"/></h1>
+                        <field name="pincode"></field>
+
+                        <notebook>
+                            <page string = "Rent Type">
+                                <field name="rentName_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="room_type"/>
+                                        <field name="sharing"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

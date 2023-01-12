@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
         <record model ="rent.lender" id = "rent_model"> 
             <field name="name">Rent System</field>
-            <field name="room_type">1rk</field>
+            <field name="room_type">1-Rk</field>
         </record>
     </data>
-</odoo>
+</odoo> -->

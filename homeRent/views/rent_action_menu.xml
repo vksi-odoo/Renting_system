@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <record id="state_button" model="ir.actions.act_window">
+        <field name="name">Rent offer</field>
+        <field name="res_model">rent.offer</field>
+        <field name="view_mode">tree,form</field>
+        <!-- <field name="domain">[('rent_type_id','=','active_id')]</field> -->
+    </record>
+
     <record id="rent_system_action" model="ir.actions.act_window">
         <field name="name">views</field>
         <field name="res_model">rent.system</field>
         <field name="view_mode">tree,form</field>
     </record>
+
+    <record id="rent_system_action12" model="ir.actions.act_window">
+        <field name="name">Rent Tags</field>
+        <field name="res_model">rent.tags</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="rent_system_action13" model="ir.actions.act_window">
+        <field name="name">Rent Types</field>
+        <field name="res_model">rent.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
 
     <record id="rent_system_action1" model="ir.actions.act_window">
         <field name="name">Lender</field>
@@ -18,17 +38,14 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <record id="rent_system_action12" model="ir.actions.act_window">
-        <field name="name">Rent Tags</field>
-        <field name="res_model">rent.tags</field>
-        <field name="view_mode">tree,form</field>
-    </record>
+   
 
-
-    <menuitem id="rent_menu_root" name="Rent System">
+    <menuitem id="rent_menu_root" name="Home Rental System"
+    web_icon="homeRent,static/description/home.png">
         <menuitem id="rent_first_level_menu" name="Settings">
             <menuitem id="rent_model_action1" action="rent_system_action"/>
             <menuitem id="rent_model_action2" action="rent_system_action12"/>
+            <menuitem id="rent_model_action3" action="rent_system_action13"/>
         </menuitem>
         <menuitem id="rent_second_level_menu" name="Task">
             <menuitem id="rent_model_menu_action" action="rent_system_action1"/>
