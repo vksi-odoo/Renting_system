@@ -9,6 +9,7 @@ class rentType(models.Model):
     
     name = fields.Char()
     pincode = fields.Integer()
+    sequence = fields.Integer("Sequence")
     rentName_ids = fields.One2many('rent.lender','rent_type_id')
     offer_count = fields.Integer('Property Type Count' ,compute="_compute_offer_")
     offer_ids = fields.One2many('rent.offer',"rent_type_id", string="offer")

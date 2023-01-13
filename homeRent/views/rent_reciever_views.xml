@@ -26,6 +26,7 @@
                     <field name="sharing"/>
                     <field name="room_type"/>
                     <separator/>
+                    <filter string="Available" name="available"/>
                     <filter string="sharing" name="sharing_room"/>
                     <separator/>
                     <filter string="room_type" name="RoomType"/>
@@ -47,7 +48,7 @@
                     <header>
                         <button name="action_buy" type="object" string="Buy"/>
                         <button name="action_cancel" type="object" string="Cancel"/>
-                        <field name="state" widget="statusbar" options="{'clickable':'1'}"></field>
+                        <field name="state" widget="statusbar"></field>
                     </header>
                     <sheet>
                         <label for ="name"></label>

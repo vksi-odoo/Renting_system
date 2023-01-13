@@ -34,6 +34,7 @@
                     <separator/>
                     <filter string="room_type" name="RoomType"/>
                     <separator/>
+                    <filter string="Available" name="available"/>
                     <filter string="sharing" name="Sharing"/>
                     <group expand="1" string="Group by">
                         <filter string="sharing" name="sharing_room" context="{'group_by':'room_type','bachelors':'True'}"/>
@@ -51,7 +52,7 @@
                     <header>
                         <button name="action_sold" type="object" string="sold"/>
                         <button name="action_cancel" type="object" string="cancel"/>
-                        <field name="state" widget="statusbar" options="{'clickable':'1'}"/>
+                        <field name="state" widget="statusbar"/>
                     </header>
                     <sheet>
                         <label for="name"></label>

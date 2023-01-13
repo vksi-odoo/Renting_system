@@ -17,7 +17,7 @@ class rentLender(models.Model):
     renting_price = fields.Float()
     sharing = fields.Integer()
     location = fields.Text()
-    bachelors = fields.Boolean(default = True)
+    bachelors = fields.Boolean()
     deposit_money = fields.Float()
     contact_no = fields.Integer()
     total_price = fields.Float(compute="_compute_total_price_")
@@ -25,6 +25,7 @@ class rentLender(models.Model):
     room_type = fields.Selection(
         string="Room Type",
         selection = [('1-rk','1-RK'),('1-bhk','1-BHK'),('2-bhk','2-BHK'),('3-bhk','3-BHK')],
+        
     )
     # purpose = fields.Selection(
     #     string="Purpose",
@@ -33,7 +34,8 @@ class rentLender(models.Model):
     # )
     state = fields.Selection(
         string="state",
-        selection = [('new','New'),('confirm','Confirm'),('done','Done'),('sold','Sold'),('cancel','Cancel')]
+        selection = [('new','New'),('confirm','Confirm'),('done','Done'),('sold','Sold'),('cancel','Cancel')],
+        tracking=True
     )
     tags_ids = fields.Many2many("rent.tags",string="tags")
     offer_ids = fields.One2many("rent.offer","rent_id",string="offer ids")
@@ -63,14 +65,14 @@ class rentLender(models.Model):
                 record.state='cancel'
         return True  
     
-    @api.constrains('contact_no')
-    def _check_contact_no(self):
-        for rec in self:
-            if len(str(rec.contact_no))!=10:
-                raise UserError("Please enter correct number")   
-            else:
-                return False
-        return True
+    # @api.constrains('contact_no')
+    # def _check_contact_no(self):
+    #     for rec in self:
+    #         if len(str(rec.contact_no))!=10:
+    #             raise UserError("Please enter correct number")   
+    #         else:
+    #             return False
+    #     return True
     
 
     

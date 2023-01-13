@@ -18,7 +18,7 @@ class rentReciever(models.Model):
     renting_price = fields.Float()
     sharing = fields.Integer()
     location = fields.Text()
-    bachelors = fields.Boolean(default = True)
+    bachelors = fields.Boolean()
     deposit_money = fields.Float()
     total_price = fields.Float(compute ="_compute_total_price_")
     date_availability = fields.Date(default=lambda self:fields.Datetime.today()+relativedelta(months=3))
@@ -30,6 +30,7 @@ class rentReciever(models.Model):
     state = fields.Selection(
         string = "Type",
         selection = [('new','New'),('confirm','Confirm'),('done','Done'),('buy','Buy'),('cancel','Cancel')],
+        tracking=True
     )
     tags_ids = fields.Many2many("rent.tags",string="tags")
     offer_ids = fields.One2many("rent.offer","rents_id",string = "Offer id" )
@@ -59,12 +60,12 @@ class rentReciever(models.Model):
                 record.state='buy'
         return True
     
-    @api.constrains('contact_no')
-    def _check_contact_no(self):    
-        for rec in self:
-            if len(str(rec.contact_no))!=10:
-                raise ValidationError("Please enter correct number")
-            else:
-                return False
-        return True
+    # @api.constrains('contact_no')
+    # def _check_contact_no(self):    
+    #     for rec in self:
+    #         if len(str(rec.contact_no))!=10:
+    #             raise ValidationError("Please enter correct number")
+    #         else:
+    #             return False
+    #     return True
                 

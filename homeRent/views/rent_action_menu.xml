@@ -30,12 +30,14 @@
         <field name="name">Lender</field>
         <field name="res_model">rent.lender</field>
         <field name="view_mode">tree,form</field>
+        <field name="context">{"search_default_available":1}</field>
     </record>
 
     <record id="rent_system_action11" model="ir.actions.act_window">
         <field name="name">Reciever</field>
         <field name="res_model">rent.reciever</field>
         <field name="view_mode">tree,form</field>
+        <field name="context">{"search_default_available":1}</field>
     </record>
 
    

@@ -9,3 +9,4 @@ class rentTags(models.Model):
     
     name = fields.Char(required=True)
     colors= fields.Integer("color index")
+    sequence = fields.Integer("Sequence")
