@@ -13,15 +13,14 @@
                                 name="%(homeRent.state_button)d"
                                 type="action"
                                 icon="fa-money">
-                                <field name="offer_count" widget="statinfo"/>
+                                <field name="offer_count" widget="statinfo" string="All offer"/>
                             </button>
                         </div>
                         <label for="name"></label>
                         <h1><field name="name"/></h1>
-                        <field name="pincode"></field>
 
                         <notebook>
-                            <page string = "Rent Type">
+                            <page string = "Rent Type for lender">
                                 <field name="rentName_ids">
                                     <tree>
                                         <field name="name"/>

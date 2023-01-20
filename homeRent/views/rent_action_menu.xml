@@ -4,7 +4,7 @@
         <field name="name">Rent offer</field>
         <field name="res_model">rent.offer</field>
         <field name="view_mode">tree,form</field>
-        <!-- <field name="domain">[('rent_type_id','=','active_id')]</field> -->
+        <field name="domain">[('rent_type_id','=',active_id)]</field>
     </record>
 
     <record id="rent_system_action" model="ir.actions.act_window">

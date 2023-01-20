@@ -5,7 +5,7 @@
             <field name="name">Renting System Tree View</field>
             <field name="model">rent.offer</field>
             <field name="arch" type="xml">
-                <tree expand="1" string="rent_tree_view">
+                <tree expand="1" string="rent_tree_view" decoration-success= "status in ('accepted','refused')">
                     <field name="price"/>
                     <field name="status"/>
                     <field name="partner_id"/>

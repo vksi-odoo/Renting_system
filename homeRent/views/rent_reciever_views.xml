@@ -89,9 +89,9 @@
                                     <group style="Margin-top:30px">
                                         <field name="bachelors"/>
                                     </group>
-                                    <group style="Margin-top:30px">
+                                    <!-- <group style="Margin-top:30px">
                                         <field name="deposit_money" attrs = "{'invisible':[('bachelors','=',False)]}"/>
-                                    </group>
+                                    </group> -->
                                     <group style="Margin-top:30px">
                                         <field name="room_type"/>
                                     </group>

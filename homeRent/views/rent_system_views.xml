@@ -44,5 +44,16 @@
                 </form>
             </field>
         </record>
+        <!-- <record id="rent_recieve_searchpanel_view" model="ir.ui.view">
+            <field name="name">Rent reciever search panel view</field>
+            <field name="model">rent.system</field>
+            <field name="arch" type="xml">
+                <search position="inside">
+                    <searchpanel>
+                        <field name="renting_price"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record> -->
     </data>
 </odoo>

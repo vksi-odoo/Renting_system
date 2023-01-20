@@ -19,6 +19,7 @@ class rentLender(models.Model):
     location = fields.Text()
     bachelors = fields.Boolean()
     deposit_money = fields.Float()
+    best_offer = fields.Integer(compute="_compute_offer_price",default=0)
     contact_no = fields.Integer()
     total_price = fields.Float(compute="_compute_total_price_")
     
@@ -47,6 +48,11 @@ class rentLender(models.Model):
     def _compute_total_price_(self):
         for record in self:
             record.total_price = record.renting_price+record.deposit_money
+            
+    @api.depends('offer_ids.price')
+    def _compute_offer_price(self):
+        for record in self:
+            record.best_offer = max(self.offer_ids.mapped('price'),default=0)
             
     def action_sold(self):
         for record in self:
