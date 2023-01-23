@@ -41,6 +41,10 @@
                     <group expand="1" string="Group by">
                         <filter string="sharing" name="sharing_room" context="{'group_by':'room_type','bachelors':'True'}"/>
                     </group>
+                    <searchpanel>
+                        <field name="rent_type_id"/>
+                        <field name="buyers_id"/>
+                    </searchpanel>
                 </search>
             </field>
         </record>
@@ -54,10 +58,11 @@
                     <header>
                         <button name="action_sold" type="object" string="sold"/>
                         <button name="action_cancel" type="object" string="cancel"/>
-                        <field name="state" widget="statusbar"/>
+                        <field name="state" widget="statusbar" statusbar_visible="new,confirm,sold,cancel" />
                     </header>
                     <sheet>
-                        <label for="name"></label>
+                        <widget name="web_ribbon" title="Sold" bg_color="bg-success" attrs="{'invisible':[('state','in',('new','confirm','cancel'))]}" />
+                        <widget name="web_ribbon" title="Cancel" bg_color="bg-danger" attrs="{'invisible':[('state','in',('new','confirm','sold'))]}" />
                         <h1><field name="name"/></h1>
                         <group>
                             <group style="Margin-top:30px">
@@ -128,16 +133,14 @@
                 </form>
             </field>
         </record>
-        <record id="rent_recieve_searchpanel_view" model="ir.ui.view">
+        <!-- <record id="rent_recieve_searchpanel_view" model="ir.ui.view">
             <field name="name">Rent lender search panel view</field>
             <field name="model">rent.lender</field>
             <field name="arch" type="xml">
                 <search position="inside">
-                    <searchpanel>
-                        <field name="rent_type_id"/>
-                    </searchpanel>
+                    
                 </search>
             </field>
-        </record>
+        </record> -->
     </data>
 </odoo>

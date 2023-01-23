@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-from odoo.exceptions import UserError, ValidationError
+from odoo.exceptions import UserError
 from dateutil.relativedelta import relativedelta
 from odoo.tools.float_utils import float_compare
 
@@ -35,7 +35,8 @@ class rentLender(models.Model):
     # )
     state = fields.Selection(
         string="state",
-        selection = [('new','New'),('confirm','Confirm'),('done','Done'),('sold','Sold'),('cancel','Cancel')],
+        selection = [('new','New'),('confirm','Confirm'),('sold','Sold'),('cancel','Cancel')],
+        default="new",
         tracking=True
     )
     tags_ids = fields.Many2many("rent.tags",string="tags")

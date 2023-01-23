@@ -29,7 +29,8 @@ class rentReciever(models.Model):
     )
     state = fields.Selection(
         string = "Type",
-        selection = [('new','New'),('confirm','Confirm'),('done','Done'),('buy','Buy'),('cancel','Cancel')],
+        selection = [('new','New'),('confirm','Confirm'),('buy','Buy'),('cancel','Cancel')],
+        default="new",
         tracking=True
     )
     tags_ids = fields.Many2many("rent.tags",string="tags")
@@ -46,18 +47,18 @@ class rentReciever(models.Model):
     
     def action_buy(self):
         for record in self:
-            if record.state=='buy':
+            if record.state=='cancel':
                 raise UserError("Cancel Properties cannot be buy")
             else:
-                record.state='cancel'
+                record.state='buy'
         return True
     
     def action_cancel(self):
         for record in self:
-            if record.state=='cancel':
+            if record.state=='buy':
                 raise UserError("Bought properties cannot be cancel")
             else:
-                record.state='buy'
+                record.state='cancel'
         return True
     
     # @api.constrains('contact_no')
