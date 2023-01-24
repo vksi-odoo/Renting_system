@@ -2,7 +2,7 @@
 
 {
     'name' : 'Home Rent Account Module',
-    'description' : 'This is account module of home rental system',
-    'depends' : ['account','homeRent'],
-    'application': True
+    'description' : 'This is home rent account module',
+    'depends' : ['homeRent','account'],
+    'application' : True
 }

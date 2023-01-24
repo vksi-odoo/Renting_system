@@ -16,3 +16,4 @@ class rentOffer(models.Model):
     rent_id = fields.Many2one("rent.lender",string = "Rent id")
     rent_type_id = fields.Many2one("rent.type",related="rent_id.rent_type_id",store=True,string = "Rent Types")
     
+        
