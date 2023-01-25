@@ -6,9 +6,10 @@ from dateutil.relativedelta import relativedelta
 from odoo.tools.float_utils import float_compare
 
 
-class rentReciever(models.Model):
+class rentReiever(models.Model):
     _name = "rent.reciever"
     _description = "Searching home for living"
+    _order = "id desc"
     _sql_constraints = [
         ("check_contact_no", "CHECK(contact_no != 10)", "Please enter correct contact number")]
     _inherit = ['mail.thread','mail.activity.mixin']

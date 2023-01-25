@@ -8,6 +8,7 @@ from odoo.tools.float_utils import float_compare
 class rentLender(models.Model):
     _name = "rent.lender"
     _description = "Giving my room for rent"
+    _order = "id desc"
     _sql_constarins=[('check_contact_no','CHECK(contact_no!=10)','Please enter correct number')]
     _inherit = ['mail.thread','mail.activity.mixin']
     

@@ -5,6 +5,7 @@ from odoo import models , fields
 class rentOffer(models.Model):
     _name="rent.offer"
     _description = "Home rent offer"
+    _order= "price desc"
     
     price = fields.Float()
     status = fields.Selection(
