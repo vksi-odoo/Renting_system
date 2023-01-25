@@ -54,10 +54,11 @@
                     <header>
                         <button name="action_sold" type="object" string="sold"/>
                         <button name="action_cancel" type="object" string="cancel"/>
-                        <field name="state" widget="statusbar"/>
+                        <field name="state" widget="statusbar" statusbar_visible="new,confirm,sold,cancel" />
                     </header>
                     <sheet>
-                        <label for="name"></label>
+                        <widget name="web_ribbon" title="Sold" bg_color="bg-success" attrs="{'invisible':[('state','in',('new','confirm','cancel'))]}" />
+                        <widget name="web_ribbon" title="Cancel" bg_color="bg-danger" attrs="{'invisible':[('state','in',('new','confirm','sold'))]}" />
                         <h1><field name="name"/></h1>
                         <group>
                             <group style="Margin-top:30px">
@@ -128,15 +129,32 @@
                 </form>
             </field>
         </record>
-        <record id="rent_recieve_searchpanel_view" model="ir.ui.view">
-            <field name="name">Rent lender search panel view</field>
+
+        ---------------------KANBAN VIEW----------------------------
+        <record id= "rent_lender_kanban_view" model="ir.ui.view">
+            <field name="name">Rent Lender Kanban View</field>
             <field name="model">rent.lender</field>
             <field name="arch" type="xml">
-                <search position="inside">
-                    <searchpanel>
-                        <field name="rent_type_id"/>
-                    </searchpanel>
-                </search>
+                <kanban default_by_group="rent_type_id" record_draggable="0">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <strong class="o_kanban_record_title">
+                                    <field name="name"/>
+                                </strong>
+                                <div>
+                                    Best Offer: <field name="best_offer"/>
+                                </div>
+                                <div>
+                                    Sharing: <field name="sharing"/>
+                                </div>
+                                <div>
+                                    <field name="tags_ids" widget="many2many_tags" options="{'color_field':'colors'}"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
             </field>
         </record>
     </data>

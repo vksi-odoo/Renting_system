@@ -51,6 +51,8 @@
                         <field name="state" widget="statusbar"></field>
                     </header>
                     <sheet>
+                        <widget name="web_ribbon" title="Buy" bg_color="bg-success" attrs = "{'invisible': [('state','in',('new','confirm','cancel'))]}"/>
+                        <widget name="web_ribbon" title="Cancel" bg_color="bg-danger" attrs="{'invisible':[('state','in',('new','confirm','buy'))]}"/>
                         <label for ="name"></label>
                         <h1><field name="name"/></h1>
                         <group>

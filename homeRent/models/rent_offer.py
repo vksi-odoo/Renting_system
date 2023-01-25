@@ -5,6 +5,7 @@ from odoo import models , fields
 class rentOffer(models.Model):
     _name="rent.offer"
     _description = "Home rent offer"
+    _order= "price desc"
     
     price = fields.Float()
     status = fields.Selection(
@@ -16,3 +17,4 @@ class rentOffer(models.Model):
     rent_id = fields.Many2one("rent.lender",string = "Rent id")
     rent_type_id = fields.Many2one("rent.type",related="rent_id.rent_type_id",store=True,string = "Rent Types")
     
+        

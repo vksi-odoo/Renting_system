@@ -6,4 +6,4 @@ from . import rent_reciever
 from . import rent_offer
 from . import rent_tags
 from . import rent_type
-from . import inherited_model
+from . import res_users
