@@ -11,7 +11,8 @@
         'views/rent_type_views.xml',
         'views/rent_offer_views.xml',
         'views/rent_tags_views.xml',
-        'views/res_users_views.xml'
+        'views/res_users_views.xml',
+        'views/pg_views.xml'
         ],
     # 'demo' : [
     #   'demo/demo_data.xml'  

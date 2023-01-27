@@ -107,6 +107,8 @@
                                     <tree editable="top">
                                         <field name="price"/>
                                         <field name="partner_id"/>
+                                        <button name="action_accept_receiver" string='accepted' icon="fa-check" type="object"/>
+                                        <button name="action_refused_receiver" string='refused' icon="fa-times" type="object"/>
                                         <field name="status"/>
                                     </tree>
                                 </field>

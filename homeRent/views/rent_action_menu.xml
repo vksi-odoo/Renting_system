@@ -31,6 +31,10 @@
         <field name="res_model">rent.lender</field>
         <field name="view_mode">tree,kanban,form</field>
         <field name="context">{"search_default_available":1}</field>
+        <field name="help" type="html">             
+            <p class="o_view_nocontent_smiling_face"> 
+            Create a new record,Please!!!</p>         
+        </field>
     </record>
 
     <record id="rent_system_action11" model="ir.actions.act_window">
@@ -38,6 +42,21 @@
         <field name="res_model">rent.reciever</field>
         <field name="view_mode">tree,form</field>
         <field name="context">{"search_default_available":1}</field>
+        <field name="help" type="html">             
+            <p class="o_view_nocontent_smiling_face"> 
+            Create a new record,Please!!!</p>         
+        </field>
+    </record>
+
+    <record id="rent_system_action14" model="ir.actions.act_window">
+        <field name="name">Paying Guest(Pg)</field>
+        <field name="res_model">pg.pg</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{"search_default_available":1}</field>
+        <field name="help" type="html">             
+            <p class="o_view_nocontent_smiling_face"> 
+            Create a new record,Please!!!</p>         
+        </field>
     </record>
 
    
@@ -52,6 +71,8 @@
         <menuitem id="rent_second_level_menu" name="Task">
             <menuitem id="rent_model_menu_action" action="rent_system_action1"/>
             <menuitem id="rent_model_menu_action01" action="rent_system_action11"/>
+            <menuitem id="rent_model_menu_action001" action="rent_system_action14"/>
+
         </menuitem>
     </menuitem>
 </odoo>
