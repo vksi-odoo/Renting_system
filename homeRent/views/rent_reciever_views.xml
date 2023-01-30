@@ -46,13 +46,13 @@
             <field name="arch" type="xml">
                 <form string="rent_reciever">
                     <header>
-                        <button name="action_buy" type="object" string="Buy"/>
+                        <button name="action_done" type="object" string="Done"/>
                         <button name="action_cancel" type="object" string="Cancel"/>
                         <field name="state" widget="statusbar"></field>
                     </header>
                     <sheet>
-                        <widget name="web_ribbon" title="Buy" bg_color="bg-success" attrs = "{'invisible': [('state','in',('new','confirm','cancel'))]}"/>
-                        <widget name="web_ribbon" title="Cancel" bg_color="bg-danger" attrs="{'invisible':[('state','in',('new','confirm','buy'))]}"/>
+                        <widget name="web_ribbon" title="Done" bg_color="bg-success" attrs = "{'invisible': [('state','in',('new','confirm','cancel'))]}"/>
+                        <widget name="web_ribbon" title="Cancel" bg_color="bg-danger" attrs="{'invisible':[('state','in',('new','confirm','done'))]}"/>
                         <label for ="name"></label>
                         <h1><field name="name"/></h1>
                         <group>
@@ -121,6 +121,41 @@
                         <field name="activity_ids"/>
                     </div>
                 </form>
+            </field>
+        </record>
+
+        ---------------------KANBAN VIEW----------------------------
+        <record id= "rent_receiver_kanban_view" model="ir.ui.view">
+            <field name="name">Rent Reciever Kanban View</field>
+            <field name="model">rent.reciever</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="rent_type_id" record_draggable="0">
+                    <field name="state"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div>
+                                    <strong class="o_kanban_record_title">
+                                        <h3><field name="name"/></h3>
+                                    </strong>
+                                </div>
+                                <div><field name="date_availability"/></div>
+                                <div>
+                                    Best Offer: <field name="total_price"/>
+                                </div>
+                                <div>
+                                    Renting Price: <field name="renting_price"/>
+                                </div>
+                                <div>
+                                    <field name="tags_ids" widget="many2many_tags" options="{'color_field':'colors'}"/>
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <field name="salesperson_id" widget="many2one_avatar_user"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
             </field>
         </record>
     </data>

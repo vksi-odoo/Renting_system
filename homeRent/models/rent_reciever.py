@@ -30,7 +30,7 @@ class rentReiever(models.Model):
     )
     state = fields.Selection(
         string = "Type",
-        selection = [('new','New'),('confirm','Confirm'),('buy','Buy'),('cancel','Cancel')],
+        selection = [('new','New'),('confirm','Confirm'),('done','Done'),('cancel','Cancel')],
         default="new",
         tracking=True
     )
@@ -46,17 +46,17 @@ class rentReiever(models.Model):
         for record in self:
             record.total_price = record.renting_price+record.deposit_money
     
-    def action_buy(self):
+    def action_done(self):
         for record in self:
             if record.state=='cancel':
                 raise UserError("Cancel Properties cannot be buy")
             else:
-                record.state='buy'
+                record.state='done'
         return True
     
     def action_cancel(self):
         for record in self:
-            if record.state=='buy':
+            if record.state=='done':
                 raise UserError("Bought properties cannot be cancel")
             else:
                 record.state='cancel'
