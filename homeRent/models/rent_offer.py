@@ -58,7 +58,7 @@ class rentOffer(models.Model):
                 raise ValidationError('Cant accept more than one')
             else:
                 for i in record:
-                    record.status='confirm'
+                    record.status='refused'
         self.status='accepted'
         self.pg_id.state='confirm'
         self.pg_id.pg_price=self.price

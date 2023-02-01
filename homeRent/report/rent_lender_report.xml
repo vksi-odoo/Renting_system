@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="rent_lender_report" model="ir.actions.report">
+        <field name="name">Lender Report</field>
+        <field name="model">rent.lender</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">homeRent.lender_report</field>
+        <field name="report_file">homeRent.lender_report</field>
+        <field name="binding_model_id" ref="model_rent_lender"/>
+        <field name="binding_type">report</field> 
+    </record>
+
+    <record id="rent_lender_report_user" model="ir.actions.report">
+        <field name="name">Res lender User Report</field>
+        <field name="model">res.users</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">homeRent.rent_lender_user</field>
+        <field name="report_file">homeRent.rent_lender_user</field>
+        <field name="binding_model_id" ref="base.model_res_users"/>
+        <field name="binding_type">report</field> 
+    </record>
+</odoo>

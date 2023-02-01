@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="rent_lender_path" inherit_id="homeRent.lender_sub_template_report">
+        <xpath expr="//table" position="before">
+            <t t-if="property.state=='sold'">
+                <div>
+                    Invoice has already been created
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

@@ -7,3 +7,4 @@ class inheritedModel(models.Model):
     
     property_ids = fields.One2many('rent.lender','salesperson_id')
     properties_ids = fields.One2many('rent.reciever','salesperson_id')
+    pg_ids = fields.One2many('pg.pg','salesperson_id')

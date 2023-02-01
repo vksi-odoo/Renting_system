@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="pg_report" model="ir.actions.report">
+            <field name="name">pg Report</field>
+            <field name="model">pg.pg</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">homeRent.pg_rent_report</field>
+            <field name="report_file">homeRent.pg_rent_report</field>
+            <field name="binding_model_id" ref="model_pg_pg"/>
+            <field name="binding_type">report</field> 
+        </record>
+    
+        <record id="pg_report_user" model="ir.actions.report">
+            <field name="name">Res paying guest User Report</field>
+            <field name="model">res.users</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">homeRent.pg_user</field>
+            <field name="report_file">homeRent.pg_user</field>
+            <field name="binding_model_id" ref="base.model_res_users"/>
+            <field name="binding_type">report</field> 
+        </record>
+</odoo>

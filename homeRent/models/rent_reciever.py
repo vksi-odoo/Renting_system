@@ -70,4 +70,16 @@ class rentReiever(models.Model):
     #         else:
     #             return False
     #     return True
-                
+    # @api.depends('sharing','room_type')
+    # def _compute_sharing_(self):
+    #     for rec in self:
+    #         if rec.room_type=='1-rk':
+    #             rec.sharing = 2 Person Only
+    #         elif rec.room_type == '1-bhk':
+    #             rec.sharing ="2 Person Only"
+    #         elif rec.room_type == '2-bhk':
+    #             rec.sharing = "4 Person Only"
+    #         elif rec.room_type == '3-bhk':
+    #             rec.sharing = "6 Person Only"
+    #         else:
+    #             rec.sharing=0

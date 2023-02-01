@@ -14,6 +14,9 @@
                     <page string="Rent Reciever">
                         <field name="properties_ids"/>
                     </page>
+                    <page string="Paying Guest">
+                        <field name="pg_ids"/>
+                    </page>
                 </xpath>
             </field>
         </record>
