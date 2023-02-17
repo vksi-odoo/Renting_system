@@ -4,6 +4,7 @@
     'description' : 'Home renting system',
     'data' : [
         'security/ir.model.access.csv',
+        
         'views/rent_action_menu.xml',
         'views/rent_lender_views.xml',
         'views/rent_system_views.xml',
@@ -13,18 +14,29 @@
         'views/rent_tags_views.xml',
         'views/res_users_views.xml',
         'views/pg_views.xml',
+        
         'report/rent_lender_report.xml',
         'report/rent_lender_template.xml',
         'report/rent_lender.xml',
+        
         'report/pg_report.xml',
         'report/pg_template.xml',
         'report/pg_pg.xml',
+        
         'report/rent_reciever_report.xml',
         'report/rent_reciever_template.xml',
-        'report/rent_reciever.xml'
+        'report/rent_reciever.xml',
+        
+        'report/rent_lender_controller.xml',
+        'report/rent_reciever_controller.xml',
+        'report/pg_controller.xml',
+        
+        'wizard/lender_wizard.xml',
+        'wizard/tenant_wizard.xml'
+         
         ],
     # 'demo' : [
     #   'demo/demo_data.xml'  
-    'depends': ['base','mail'],
+    'depends': ['base','mail','portal','website'],
     'application' : True,
 }

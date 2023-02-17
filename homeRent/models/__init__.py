@@ -7,4 +7,4 @@ from . import rent_offer
 from . import rent_tags
 from . import rent_type
 from . import res_users
-from . import pg
+from . import pg_pg

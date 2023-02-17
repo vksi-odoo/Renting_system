@@ -12,6 +12,7 @@ class pg(models.Model):
     
     name = fields.Char(required=True,default="Name")
     description = fields.Text("Description",copy=False,default="What is your furthur requirment?")
+    images=fields.Image()
     date_availability = fields.Date(default = lambda self: fields.Datetime.today()+relativedelta(months=3))
     pg_price = fields.Float(compute='_compute_sharing_')
     sharing = fields.Selection(

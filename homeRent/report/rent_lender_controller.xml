@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="rent_lender" model="website.menu">
+            <field name="name">Rent Lender</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="url">/homeRent/lender/</field>
+        </record>
+    </data>
+    
+    <template id = "index">
+        <t t-call="website.layout">
+            <form action="/homeRent/lender/">
+                <t t-call="website.website_search_box">
+                    <t t-set="action" t-value=" '/homeRent/' "/>
+                </t>
+            </form>
+            <t t-set="title">Rent Lender</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div class="row row-cols-4">
+                        <t t-foreach="properties" t-as="property">
+                            <div class="col">
+                                <div class="card-group" style="height:25rem;width:18rem;padding:30px;margin-bottom:30px">
+                                    <div class="card">
+                                        <img class="card-img-top" style="margin-bottom:20px; height:100px width:300px;" t-attf-src="data:image/jpg;base64,{{ property.images }}" alt="Here comes an Images ..."/>
+                                        <div class="card-body">
+                                            <h5 class="card-title"><span t-field="property.name"/></h5>
+                                            <span t-esc="property.date_availability"/>
+                                            <div>Renting Price: <span t-esc="property.renting_price"/></div>
+                                            <center><a t-attf-href="/homeRent/{{ slug(property) }}" class="btn btn-primary" width="100%">Details</a></center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center my-3">
+                <t t-call="website.pager">
+                </t>
+            </div>
+        </t>
+    </template>
+
+    <template id="template_controller">
+        <t t-call="website.layout">
+            <div class="oe_structure">
+                <div class="container">
+                    <div><i t-field="proxy.images" t-options='{"widget":"image"}' style="float:right; margin:40px;height:200px;width:300ox;"/></div>
+                    <h3 t-esc="proxy.name"/>
+                    <div><span t-field="proxy.description"/></div>
+                    <div>Last Modified: <i t-field="proxy.write_date" t-options='{"widget":"relative"}'/></div>
+                    <div>Renting Price: <span t-field="proxy.renting_price"/></div>
+                    <div>Salesman: <span t-field="proxy.salesperson_id"/></div>
+                    <div>Tags: <span t-field="proxy.tags_ids"/></div>
+                </div>
+            </div>
+            <div class="oe_structure"></div>
+        </t>
+    </template>
+
+    
+</odoo>

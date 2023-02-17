@@ -52,28 +52,31 @@
                         <widget name="web_ribbon" title="Cancel" bg_color="bg-danger" attrs="{'invisible':[('state','in',('new','confirm','done'))]}" />
                         <h1><field name="name"/></h1>
                         <group>
-                            <group style="Margin-top:30px">
+                            <group>
                                 <field name="date_availability"/>
                             </group>
-                            <group style="Margin-top:30px">
+                            <group>
+                                <field name="images" widget="image" class="oe_avatar"/>
+                            </group>
+                            <group>
                                 <field name="tags_ids" widget ="many2many_tags" options="{'color_field': 'colors' , 'no_create':True, 'no_edit': True}"/>
                             </group> 
-                            <group style= "Margin-top:30px">
+                            <group>
                                 <field name="contact_no" widget="char"/>
                             </group>
-                            <group style="Margin-top:30px">
+                            <group>
                                 <field name="food_category"/>
                             </group>
-                            <group style="Margin-top:30px">
+                            <group>
                                 <field name="sharing"/>
                             </group>
-                            <group style="Margin-top:30px">
+                            <group>
                                 <field name="salesperson_id" widget="many2one_avatar"/>
                             </group>
-                            <group style="Margin-top:30px">
+                            <group>
                                 <field name="buyers_id" widget="many2one_avatar"/>
                             </group>
-                            <group style="Margin-top:30px">
+                            <group>
                                 <field name="location"/>
                             </group>
                             <!-- <group style="Margin-top:30px">

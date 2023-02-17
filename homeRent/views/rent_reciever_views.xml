@@ -7,6 +7,9 @@
             <field name="model">rent.reciever</field>
             <field name="arch" type="xml">
                 <tree expand="1" string="rent_reciever">
+                    <header>
+                        <button name="%(tenant_wizard_action)d" type="action" string="Add offer" class="oe_highlight"/>
+                    </header>
                     <field name="name"/>
                     <field name="room_type"/>
                     <field name="tags_ids" widget="many2many_tags"  options="{'color_field':'colors'}"/>
@@ -56,31 +59,34 @@
                         <label for ="name"></label>
                         <h1><field name="name"/></h1>
                         <group>
-                            <group style="Margin-top:30px">     
+                            <group>     
                                 <field name="date_availability"/>
                             </group>
-                            <group style="Margin-top:30px">
+                            <group>     
+                                <field name="images" widget="image" class="oe_avatar" />
+                            </group>
+                            <group>
                                 <field name="tags_ids" widget ="many2many_tags" options="{'color_field': 'colors' , 'no_create':True, 'no_edit': True}" />
                             </group> 
-                            <group style="Margin-top:30px">
+                            <group>
                                 <field name="renting_price"/>
                             </group>
-                            <group style="Margin-top:30px">
+                            <group>
                                 <field name="contact_no" widget="char"/>
                             </group>
-                            <group style="Margin-top:30px">
+                            <group>
                                 <field name="sharing"/>
                             </group>
-                            <group style="Margin-top:30px">
+                            <group>
                                 <field name="salesperson_id" widget="many2one_avatar"/>
                             </group>
-                            <group style="Margin-top:30px">
+                            <group>
                                 <field name="buyers_id" widget="many2one_avatar"/>
                             </group>
-                            <group style="Margin-top:30px">
+                            <group>
                                 <field name="rent_type_id" options="{'no_create':True,'no_edit':True}"/>
                             </group>
-                            <group style="Margin-top:30px">
+                            <group>
                                 <field name="location"/>
                             </group>
                         </group>
@@ -88,16 +94,16 @@
                             <page string = "description">
                                 <field name="description"/>
                                 <group>
-                                    <group style="Margin-top:30px">
+                                    <group>
                                         <field name="bachelors"/>
                                     </group>
                                     <!-- <group style="Margin-top:30px">
                                         <field name="deposit_money" attrs = "{'invisible':[('bachelors','=',False)]}"/>
                                     </group> -->
-                                    <group style="Margin-top:30px">
+                                    <group>
                                         <field name="room_type"/>
                                     </group>
-                                    <group style="Margin-top:30px">
+                                    <group>
                                         <field name="total_price"/>
                                     </group>
                                 </group>

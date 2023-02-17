@@ -15,6 +15,7 @@ class rentReiever(models.Model):
     _inherit = ['mail.thread','mail.activity.mixin']
      
     name = fields.Char(required = True,default="Name")
+    images=fields.Image()
     description = fields.Text()
     renting_price = fields.Float()
     sharing = fields.Integer()

@@ -13,6 +13,7 @@ class rentLender(models.Model):
     _inherit = ['mail.thread','mail.activity.mixin']
     
     name = fields.Char(required=True,default="Name")
+    images = fields.Image(help="select image here")
     description = fields.Text("Description",copy=False,default="What is your furthur requirment?")
     date_availability = fields.Date(default = lambda self: fields.Datetime.today()+relativedelta(months=3))
     renting_price = fields.Float()

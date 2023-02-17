@@ -6,3 +6,5 @@ homeRent.access_rent_offer,access_rent_offer,homeRent.model_rent_offer,base.grou
 homeRent.access_rent_tags,access_rent_tags,homeRent.model_rent_tags,base.group_user,1,1,1,1
 homeRent.access_rent_type,access_rent_type,homeRent.model_rent_type,base.group_user,1,1,1,1
 homeRent.access_pg_pg,access_pg_pg,homeRent.model_pg_pg,base.group_user,1,1,1,1
+homeRent.access_lender_wizard,access_lender_wizard,homeRent.model_lender_wizard,base.group_user,1,1,1,1
+homeRent.access_tenant_wizard,access_tenant_wizard,homeRent.model_tenant_wizard,base.group_user,1,1,1,1
