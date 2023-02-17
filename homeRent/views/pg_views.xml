@@ -8,6 +8,9 @@
             <field name="model">pg.pg</field>
             <field name="arch" type="xml">
                 <tree expand="1" string="pg_tree_view">
+                    <header>
+                        <button name="%(pg_wizar_action)d" type="action" string="Add Offer" class="oe_highlight"/>
+                    </header>
                     <field name="name"/>
                     <field name="pg_price" optional = "hide"/>
                     <field name="sharing" optional="hide"/>

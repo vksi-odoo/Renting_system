@@ -32,7 +32,8 @@
         'report/pg_controller.xml',
         
         'wizard/lender_wizard.xml',
-        'wizard/tenant_wizard.xml'
+        'wizard/tenant_wizard.xml',
+        'wizard/pg_wizard.xml'
          
         ],
     # 'demo' : [

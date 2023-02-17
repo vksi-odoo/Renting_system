@@ -8,3 +8,4 @@ homeRent.access_rent_type,access_rent_type,homeRent.model_rent_type,base.group_u
 homeRent.access_pg_pg,access_pg_pg,homeRent.model_pg_pg,base.group_user,1,1,1,1
 homeRent.access_lender_wizard,access_lender_wizard,homeRent.model_lender_wizard,base.group_user,1,1,1,1
 homeRent.access_tenant_wizard,access_tenant_wizard,homeRent.model_tenant_wizard,base.group_user,1,1,1,1
+homeRent.access_pg_wizard,access_pg_wizard,homeRent.model_pg_wizard,base.group_user,1,1,1,1
