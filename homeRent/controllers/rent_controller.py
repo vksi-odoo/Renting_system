@@ -27,14 +27,14 @@ class rent_lender(http.Controller):
         return http.request.render('homeRent.template_controller',{
             'proxy' : properties
         })        
-
-class rent_reciever(http.Controller):
-    @http.route(['/homeRent/reciever/','/homeRent/reciever/page/<int:page>'],auth='public',website=True)
-    def index(self,page=0,search='',**kw):
+    
+class rent_lender(http.Controller):
+   @http.route(['/homeRent/reciever/','/homeRent/reciever/page/<int:page>'],auth='public',website=True)
+   def index(self,page=0,search='',**kw):
         domain=[]
         if search:
             domain.append(('name','ilike','search'))
-        lending = http.request.env['rent.reciever'].search(domain)
+        lending = http.request.env['rent.lender'].search(domain)
         total_total = lending.sudo().search_count([])
         pager = http.request.website.pager(
             url = '/homeRent/reciever/',
@@ -49,11 +49,13 @@ class rent_reciever(http.Controller):
             'pager':pager,
         })
         
-    @http.route('/homeRent/<model("rent.reciever"):propert>/',auth='public',website=True)
-    def property(self,propert):
-        return http.request.render('homeRent.reciever_controller',{
-            'proxy' : propert
-        })   
+   @http.route('/homeRent/<model("rent.reciever"):propert>/',auth='public',website=True)
+   def property(self,propert):
+        return http.request.render('homeRent.rec_controller',{
+            'pro' : propert
+        })        
+
+
         
 class pg_pg(http.Controller):
     @http.route(['/homeRent/pg/','/homeRent/pg/page/<int:page>'],auth='public',website=True)

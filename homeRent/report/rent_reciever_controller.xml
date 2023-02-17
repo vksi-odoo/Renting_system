@@ -44,7 +44,7 @@
         </t>
     </template>
 
-    <template id="reciever_controller">
+    <template id="rec_controller">
         <t t-call="website.layout">
             <div class="oe_structure">
                 <div class="container">

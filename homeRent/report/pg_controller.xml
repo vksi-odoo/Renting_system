@@ -7,7 +7,7 @@
             <field name="url">/homeRent/pg/</field>
         </record>
     </data>
-
+    
     <template id = "pg">
         <t t-call="website.layout">
             <form action="/homeRent/pg/">
@@ -27,7 +27,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title"><span t-field="property.name"/></h5>
                                             <span t-esc="property.date_availability"/>
-                                            <div>PG Price: <span t-esc="property.pg_price"/></div>
+                                            <div>Renting Price: <span t-esc="property.pg_price"/></div>
                                             <center><a t-attf-href="/homeRent/{{ slug(property) }}" class="btn btn-primary" width="100%">Details</a></center>
                                         </div>
                                     </div>
@@ -60,4 +60,6 @@
             <div class="oe_structure"></div>
         </t>
     </template>
+
+    
 </odoo>
